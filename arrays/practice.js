@@ -12,6 +12,9 @@
 var arr = [10,20,30];
 // Do not edit the code above.
 
+function first(array){
+  return array[0];
+}
 /*
   Create a function named 'first' that is given 'arr' as an argument.
   Return the first item in the given array.
@@ -32,9 +35,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
-
-
+function last(array){
+  return array[2];
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -49,7 +52,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 
 //Code Here
 
-
+function looper(family){
+  for(let i = 0; i < family.length; i++)
+  {
+    alert(family[i]);
+  }
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -64,7 +72,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 
-
+function reversedLooper(abc){
+  for(let i = abc.length - 1; i >=0 ; i--)
+  {
+    alert(abc[i]);
+  }
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -77,12 +90,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
-
-
-
-
-
+function evenFinder(nums){
+  let evens = []
+  let j = 0;
+  for(i=0;i<nums.length;i++){
+    if(nums[i]%2===0){
+      evens[j] = nums[i]
+      j++;
+    }
+  }
+  return evens
+}
 
 
 /////////////////////// EXTRA PRACTICE PROBLEMS BELOW ////////////////////
@@ -106,7 +124,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  let odds = [];
+  let even = [];
+  let two = [even, odds];
+  for (let i = 0; i < numbersArray.length; i++){
+    if(numbersArray[i] % 2 === 0){
+      even.push(numbersArray[i])
+    }
+    else{
+      odds.push(numbersArray[i])
+    }
+  }
+  
+  return two;
+}
 
 
 
@@ -128,7 +160,16 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr){
+  let randomNumber = getRandomArbitrary();
+  for(let i = 0; i < arr.length; i++)
+  {
+    if(arr[i] === randomNumber){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 
@@ -157,7 +198,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList, remove){
+  for(let i = 0; i < myGroceryList.length; i++){
+    if(myGroceryList[i] === remove){
+      myGroceryList.splice(i, 1);
+    }
+  }
+  return myGroceryList;
+}
+
+function addItem(myGroceryList, food){
+  myGroceryList.push(food);
+  return myGroceryList;
+}
 
 
 
@@ -166,9 +219,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
-
-//Code Here
-
+function maker(){
+  let numArr = [];
+  for(let i = 1; i <= 215; i++){
+    numArr[i-1] = i;
+  }
+  return numArr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -183,9 +240,22 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
-
-
+/////////This is the worst way to convert strings to numbers but I am unfamiliar with the more efficient way///////////////
+function addTen(numbers){
+  for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] === '9'){
+      numbers[i] = 9;
+    }
+    if(numbers[i] === '25'){
+      numbers[i] = 25;
+    }
+    if(numbers[i] === '34'){
+      numbers[i] = 34;
+    }
+    numbers[i] = numbers[i] + 10;
+  }
+  return numbers;
+}
 
 ////////// PROBLEM 11 //////////
 
